@@ -1,4 +1,8 @@
 <script>
+	import { enhance } from '$app/forms';
+
+	/** @type {import('./$types').ActionData} */
+	export let form;
 </script>
 
 <div id="Contact" class="section">
@@ -17,6 +21,16 @@
 					class="contact-form"
 					method="POST"
 					action="?/sendEmail"
+					use:enhance={({ formElement, formData, action, cancel, submitter }) => {
+						return async ({ result, update }) => {
+							if (result?.type == 'success' && result?.data?.success) {
+								form = { success: true };
+							} else {
+								form = { success: false };
+							}
+							update();
+						};
+					}}
 				>
 					<div class="form-item">
 						<label for="Contact-Name" class="form-label">Name *</label><input
@@ -43,7 +57,7 @@
 						/>
 					</div>
 					<div class="form-item">
-						<label for="Contact-1-Name" class="form-label">Project Type</label>
+						<label for="Contact-Type" class="form-label">Project Type</label>
 						<div class="select-wrapper">
 							<select
 								id="Contact-Type"
@@ -62,7 +76,7 @@
 						</div>
 					</div>
 					<div class="form-item">
-						<label for="Contact-1-Name" class="form-label">Budget</label>
+						<label for="Contact-Budget" class="form-label">Budget</label>
 						<div class="select-wrapper">
 							<select
 								id="Contact-Budget"
@@ -72,7 +86,7 @@
 							>
 								<option value="€2,000 - €5,000">€2,000 - €5,000</option>
 								<option value="€5,000 - €10,000">€5,000 - €10,000</option>
-								<option value="Second">€10,000+</option>
+								<option value="€10,000+">€10,000+</option>
 							</select>
 						</div>
 					</div>
@@ -81,7 +95,7 @@
 							id="Contact-Message"
 							name="Contact-Message"
 							placeholder="Describe your project..."
-							maxlength="5000"
+							maxlength="50000"
 							data-name="Contact Message"
 							required
 							class="input text-area w-input"
@@ -95,12 +109,15 @@
 						class="button w-button"
 					/>
 				</form>
-				<div class="form-success w-form-done">
-					<div>Thank you! Your submission has been received!</div>
-				</div>
-				<div class="error w-form-fail">
-					<div>Oops! Something went wrong while submitting the form.</div>
-				</div>
+				{#if form?.success}
+					<div class="form-success w-form-done">
+						<div>Thank you! Your submission has been received!</div>
+					</div>
+				{:else if form}
+					<div class="error w-form-fail">
+						<div>Oops! Something went wrong while submitting the form.</div>
+					</div>
+				{/if}
 			</div>
 		</div>
 	</div>

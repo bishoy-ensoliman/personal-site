@@ -115,4 +115,4 @@
 	</div>
 </div>
 
-<Contact />
+<Contact form={null} />
