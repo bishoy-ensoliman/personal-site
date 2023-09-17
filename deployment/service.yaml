@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production-bishoysoliman
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personalsite
+  namespace: production-bishoysoliman
+  labels:
+    app: personalsite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: personalsite
+  template:
+    metadata:
+      labels:
+        app: personalsite
+    spec:
+      containers:
+      - name: personalsite
+        image: bishoyens/personalsite
+        ports:
+        - name: http
+          containerPort: 3000
+        resources:
+          requests:
+            memory: 64Mi
+            cpu: 100m
+          limits:
+            memory: 128Mi
+            cpu: 300m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: personalsite
+  namespace: production-bishoysoliman
+spec:
+  type: LoadBalancer
+  selector:
+    app: personalsite
+  ports:
+  - protocol: TCP
+    port: 3000
