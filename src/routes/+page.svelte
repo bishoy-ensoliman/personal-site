@@ -27,7 +27,7 @@
 			<div class="bubble _2">
 				<img src={plane} loading="lazy" alt="" class="bubble-icon _2" />
 				<img src={rocket} loading="lazy" alt="" class="bubble-icon _2" />
-				<div>Aerospace</div>
+				<div>ASE</div>
 			</div>
 			<div class="bubble _3">
 				<img src={pcb} loading="lazy" alt="" class="bubble-icon _3" />
@@ -59,24 +59,21 @@
 					A <strong>Computer & Systems</strong> Engineer and <strong>Aerospace</strong> Engineering Student
 				</h1>
 				<p class="hero-description">
-					Experienced Computer and Systems Engineer with a demonstrated history of working in the
-					sports, movies, fitness, transportation, and health industries together with Business
-					Processes Automation and Software Systems Integration.
+					As a Senior Software Engineer at Avi Medical, I work with a team of engineers and
+					healthcare professionals to develop and integrate software solutions for medical devices
+					and applications. I use my skills in Full-stack Dev, and systems integration to ensure the
+					quality, security, and performance of our products.
 				</p>
 				<p>
-					Skilled in Vue.js, React, Angular, Relational/NoSQL Databases, Spring-boot, Quarkus, and
-					Django. Have most of my experience in Full-stack Development using different Stacks with
-					some embedded, IOT, and ML experience.
+					I have a strong background in computer and systems engineering, with a B.Sc. and a M.Sc.
+					coursework from Faculty of Engineering, Alexandria University. I have also worked in
+					various industries, such as sports, movies, fitness, transportation, and health, using
+					different technologies and frameworks, such as Vue.js, React, Angular, Spring-boot,
+					Quarkus, and Django. I am always eager to learn new skills and challenge myself, which is
+					why I am pursuing a B.Sc. in Aerospace Engineering from Technical University of Munich. My
+					goal is to combine my passion for software development and aerospace engineering to create
+					innovative and impactful solutions for the world.
 				</p>
-				<p>
-					Strong engineering professional with a BSc. and MSc. coursework focused on Computer and
-					Systems Engineering.
-				</p>
-				<p>
-					Embedded software developer working on my own projects in my free time “Mechatronics
-					Enthusiast”
-				</p>
-				<p>Always eager to learn new skills. Starting BSc. Aerospace at TUM</p>
 			</div>
 			<div class="panel">
 				<a href="mailto:contact@bishoysoliman.com" class="panel-contact w-inline-block">
